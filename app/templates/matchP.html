@@ -1,0 +1,93 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Match Penny</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/narrow-jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+
+      <main role="main">
+
+        <div class="jumbotron">
+          <form action="/guess" method = "POST">
+          <div class="container">
+            <h1>{{role}} -- Decide your chose:</h1>
+            <div class="clo-md-4">
+              <h1>{{name}} -- Decide your chose:</h1>
+              <div class="radio">
+                <label>
+                  <input type="radio" name='optionsRadios' id="optionsRadios1" value="Head">Head
+                </label>
+              </div>
+            <div class="clo-md-4">
+              <div class="radio">
+                <label>
+                  <input type="radio" name='optionsRadios' id="optionsRadios2" value="Tail">Tail
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--first option done-->
+          <hr>
+          {% if role == 'sender' %}
+          <div class="clo-md-4">
+            <h1>Cheat talk:</h1>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadiosCheap" id="optionsRadios3" value="Head">Head
+              </label>
+            </div>
+          <div class="clo-md-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadiosCheap" id="optionsRadios4" value="Tail">Tail
+              </label>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <h1>Guess how many Sender are true:</h1>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadiosNumber" id="optionsRadios3" value="Head">Head
+          </label>
+        </div>
+      <div class="clo-md-4">
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadiosnumber" id="optionsRadios4" value="Tail">Tail
+          </label>
+        </div>
+      </div>
+    </div>
+        {% endif %}
+        <input type="submit" class="btn btn-primary" value="submit">
+        <!--second option done-->
+        </div>
+      </from>
+      </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; Company 2017</p>
+      </footer>
+
+    </div> <!-- /container -->
+  </body>
+</html>
